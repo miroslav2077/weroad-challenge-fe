@@ -1,0 +1,55 @@
+query Products {
+  products {
+    id
+    name
+    slug
+    description
+    startingDate
+    endingDate
+    price
+    imageUrl
+  }
+}
+
+query ProductBySlug($slug: String!) {
+  productBySlug(slug: $slug) {
+    id
+    name
+    slug
+    description
+    startingDate
+    endingDate
+    price
+    nature
+    relax
+    history
+    culture
+    party
+    imageUrl
+  }
+}
+
+query AvailableSeats($id: String!) {
+  availableSeats(id: $id)
+}
+
+query Cart($id: String!){
+  cart(id: $id) {
+    id
+    expiresAt
+    product {
+      id
+      slug
+      price
+    }
+    travelerEmail
+    travelerAmount
+    totalAmount
+  }
+}
+
+mutation AddCart($cart: NewCartInput!) {
+  addCart(newCartData: $cart) {
+    id
+  }
+}

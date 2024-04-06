@@ -1,11 +1,10 @@
 <template>
-
 <div class="container py-8 px-4">
   <section>
     <h1 class="text-3xl font-bold mb-4"><span class="text-red-500">We</span>Road</h1>
   </section>
   <section class="flex flex-col bg-white space-y-4 items-center overflow-hidden">
-    <a :href="'/trips/'+product.slug" class="relative flex flex-col grow-0 justify-between overflow-hidden min-w-72 w-full h-72 rounded-xl shadow-md cursor-pointer group shrink-0" v-for="product in data?.products">
+    <a :href="'/trips/'+product.slug" class="relative flex flex-col grow-0 justify-between overflow-hidden min-w-72 w-full h-72 rounded-xl shadow-md cursor-pointer group shrink-0" v-for="product in products">
       <div class="absolute bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform z-0" :style="{ backgroundImage: `url(${product.imageUrl})` }">
       </div>
       <div class="z-10 relative flex justify-between py-2 px-4 bg-gradient-to-b from-slate-950/20 to-transparent">
@@ -24,62 +23,8 @@
     </a>
   </section>
 </div>
-
-
-  <!-- <div class="mb-[500px]"></div>
-  <h2 class="text-xl font-bold">WeRoad</h2>
-
-  <div class="max-w-screen-xs mx-auto flex-col space-y-4">
-    <div class="overflow-hidden bg-white border-b-4" v-for="product in data?.products">
-      <div class="flex flex-col px-4 py-5 sm:p-6 items-start justify-between">
-        <div class="flex w-full justify-between items-center">
-          <h1 class="text-2xl font-medium mb-2">{{ product.name }}</h1>
-          <div class="font-medium text-red-600 text-xl">{{ formatPrice(product.price) }}</div>
-        </div>
-        <div class="text-gray-600 flex justify-between items-center space-x-4 w-full mb-8 text-sm">
-          <div>
-            {{ formatDateWithOptions(product.startingDate, { weekday: 'short' }) }}
-            <span class="font-bold">
-              {{ formatDateWithOptions(product.startingDate, { day: '2-digit' }) }}
-              {{ formatDateWithOptions(product.startingDate, { month: 'long' }) }}
-            </span>
-          </div>
-          <div class="grow h-px bg-gray-300 text-center">
-          </div>
-          <div>
-            {{ formatDateWithOptions(product.endingDate, { weekday: 'short' }) }}
-            <span class="font-bold">
-              {{ formatDateWithOptions(product.endingDate, { day: '2-digit' }) }}
-              {{ formatDateWithOptions(product.endingDate, { month: 'long' }) }}
-            </span>
-          </div>
-        </div>
-        <div class="w-full">
-          <a class="w-full block text-center px-8 py-2 bg-red-500 hover:bg-red-400 rounded font-bold text-white" v-bind:href="'/trips/'+product.slug">See details</a>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <script lang="ts" setup>
-const formatDateWithOptions = (stringDate: string, options: Intl.DateTimeFormatOptions) => {
-  return new Date(stringDate).toLocaleString('en-UK', options);
-}
-
-const query = gql`
-  query getProducts {
-    products {
-      id
-      name
-      slug
-      description
-      startingDate
-      endingDate
-      price
-      imageUrl
-    }
-  }
-`;
-const { data } = await useAsyncQuery(query);
+const { products } = await GqlProducts();
 </script>
