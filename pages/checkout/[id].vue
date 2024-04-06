@@ -1,11 +1,10 @@
 <template>
-<div class="flex flex-col justify-center items-center mt-10">
+<section id="payment_timer" class="flex flex-col justify-center items-center mt-10">
   <span class="text-xs text-black block uppercase font-bold">cart will expire in</span>
   <Timer v-if="cart" :expires-at="new Date(cart.expiresAt)"></Timer>
-</div>
+</section>
 
-
-<div class="container mx-auto p-8">
+<section id="payment_form" class="container mx-auto p-8">
   <form @submit="onSubmitCompletePayment">
     <h3 class="text-lg font-medium text-gray-900">Totally legit payment service v0.1 💸💸💸</h3>
 
@@ -40,7 +39,7 @@
         <button type="submit" class="bg-red-500 font-bold uppercase rounded text-white p-2 w-full">pay</button>
       </div>
   </form>
-</div>
+</section>
 </template>
 
 <script lang="ts" setup>

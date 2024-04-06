@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col relative">
+  <section id="trip_image" class="flex flex-col relative">
     <a href="/" class="absolute left-4 top-4 rounded-full bg-white flex items-center justify-center text-lg w-10 h-10 font-bold">←</a>
     <img :src="productBySlug.imageUrl" class="w-full h-72 object-cover sm:rounded-t-xl" />
-  </div>
-  <div class="container px-8 py-4">
+  </section>
+  <section id="trip_description" class="container px-8 py-4">
     <h1 class="text-2xl font-bold mb-0">{{ productBySlug.name }}</h1>
     <div class="text-gray-600 flex justify-between items-center space-x-4 w-full mb-4">
       <div>
@@ -47,8 +47,8 @@
       </div>
     </div>
     <p class="text-md leading-1 text-gray-400 mb-2">{{ productBySlug.description }}</p>
-  </div>
-  <div class="container flex flex-col space-y-4 mx-auto px-8 border-t py-8">
+  </section>
+  <section id="trip_purchase" class="container flex flex-col space-y-4 mx-auto px-8 border-t py-8">
     <div class="flex justify-between space-x-3">
       <div class="self-end mb-px">
         <div class="text-xs font-bold">WHEN</div>
@@ -104,7 +104,7 @@
       </div>
       </form>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
