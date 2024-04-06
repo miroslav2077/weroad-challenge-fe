@@ -58,7 +58,7 @@ const onSubmitCompletePayment = async (e: Event) => {
     const result = await GqlSetAsPaid({ id: cart.id })
 
     if (result.setAsPaid) {
-      navigateTo('/thank-you');
+      navigateTo('/get-ready');
     }
   } catch (e: any) {
     alert(e.message);
