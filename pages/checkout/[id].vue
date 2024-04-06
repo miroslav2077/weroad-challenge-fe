@@ -10,23 +10,14 @@
 
     <div class="mt-6 grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4 mb-5">
       <div class="col-span-3 sm:col-span-4">
-        <label for="card-number" class="text-xs text-black block uppercase font-bold">Card number</label>
-        <div class="mt-1">
-          <input type="text" id="card-number" name="card-number" autocomplete="cc-number" class="block p-2 w-full rounded-md border-gray-300 border shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" required />
-        </div>
+        <InputWithLabel name="card-number" type="text" label="Card Number" placeholder="2222 9909 0525 7051" :required="true"/>
       </div>
       <div class="col-span-2 sm:col-span-3">
-        <label for="expiration-date" class="text-xs text-black block uppercase font-bold">Expiration date (MM/YY)</label>
-        <div class="mt-1">
-          <input type="text" name="expiration-date" id="expiration-date" autocomplete="cc-exp" class="block p-2 w-full rounded-md border-gray-300 border shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" required />
-        </div>
+        <InputWithLabel name="expiration-date" type="text" label="Expiration date (MM/YY)" placeholder="10/28" :required="true"/>
       </div>
 
       <div>
-        <label for="cvc" class="text-xs text-black block uppercase font-bold">CVC</label>
-        <div class="mt-1">
-          <input type="text" name="cvc" id="cvc" autocomplete="csc" class="block p-2 w-full rounded-md border-gray-300 border shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" required />
-        </div>
+        <InputWithLabel name="cvc" type="text" label="CVC" placeholder="028" :required="true"/>
       </div>
     </div>
     <div class="text-sm font-bold">

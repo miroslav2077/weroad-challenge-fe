@@ -74,13 +74,8 @@
     </div>
     <div>
       <form @submit="onSubmitProceedToPayment" class="overflow-hidden flex flex-col h-full space-y-4" v-if="availableSeats > 0">
-        <div>
-          <label for="travelerEmail" class="block text-sm font-bold leading-6 text-gray-900 uppercase">Email</label>
-          <div class="mt-2">
-            <input type="email" name="travelerEmail" id="travelerEmail" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 outline-red-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6" placeholder="you@example.com" aria-describedby="email-description" required />
-          </div>
-          <p class="mt-2 text-sm text-gray-500" id="email-description">We'll send you a recap of the trip to this address.</p>
-        </div>
+
+        <InputWithLabel name="travelerEmail" type="email" label="Email" placeholder="you@example.com" description="We'll send you a recap of the trip to this address." :required="true"/>
 
         <div class="flex space-x-16">
         <div>
