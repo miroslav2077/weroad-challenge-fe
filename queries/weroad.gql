@@ -53,3 +53,7 @@ mutation AddCart($cart: NewCartInput!) {
     id
   }
 }
+
+mutation SetAsPaid($id: String!) {
+  setAsPaid(id: $id)
+}
