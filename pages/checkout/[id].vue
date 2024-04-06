@@ -6,7 +6,7 @@
 
 <section id="payment_form" class="container mx-auto p-8">
   <form @submit="onSubmitCompletePayment">
-    <h3 class="text-lg font-medium text-gray-900">Totally legit payment service v0.1 💸💸💸</h3>
+    <h3 class="text-2xl font-medium text-gray-900">Totally legit payment service v0.1 💸</h3>
 
     <div class="mt-6 grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4 mb-5">
       <div class="col-span-3 sm:col-span-4">
