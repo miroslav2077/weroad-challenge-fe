@@ -34,12 +34,21 @@
 </template>
 
 <script lang="ts" setup>
+import type { CartQuery } from '#gql';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const cartId: string = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id;
+let cart: CartQuery["cart"];
+try {
+  cart = (await GqlCart({ id: cartId })).cart;
+} catch {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found'
+  });
+}
 
-const { cart } = await GqlCart({ id: cartId });
 
 const onSubmitCompletePayment = async (e: Event) => {
   e.preventDefault();

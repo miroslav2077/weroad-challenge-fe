@@ -111,9 +111,19 @@ const route = useRoute();
 
 const slug: string = Array.isArray(route.params.slug) ? route.params.slug[0] : route.params.slug;
 
-const { productBySlug } = await GqlProductBySlug({ slug: slug });
+let productBySlug: ProductBySlugQuery["productBySlug"];
+
+try {
+  productBySlug = (await GqlProductBySlug({ slug: slug })).productBySlug;
+} catch {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found'
+  });
+}
 
 const { availableSeats } = await GqlAvailableSeats({ id: productBySlug.id });
+
 
 const onSubmitProceedToPayment = async (e: Event) => {
   e.preventDefault();
