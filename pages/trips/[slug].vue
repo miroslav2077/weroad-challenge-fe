@@ -103,6 +103,7 @@
 </template>
 
 <script setup lang="ts">
+import type { ProductBySlugQuery } from '#gql';
 import { useRoute } from 'vue-router';
 
 let travelerAmount = ref(1);
