@@ -14,6 +14,11 @@ Implement a checkout process for WeRoad users to buy a Travel where:
 - A Travel has a max capacity of 5 seats;
 - After confirming the number of seats to reserve the availability should be granted for 15 minutes before the cart expires;
 
+### Reasoning behind decisions
+I mostly adhered to nuxt's structure and UI pattern as it's a very convenient and reusable way of developing. I used emoji instead of icons just for fast prototyping design and basic tailwind with a little bit of customization.
+I didn't really feel the need to further refactor sections of code into new components as I appreciate low overhead during early phases of development.
+Testing was done using Playwright (e2e) as time was limited, and business logic was mostly based on GraphQL queries.
+
 ### Challenge based on the following stack:
 - [MySql](https://github.com/mysql/mysql-server)
 - [TypeScript](https://github.com/microsoft/TypeScript)
