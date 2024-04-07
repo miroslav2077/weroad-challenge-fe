@@ -65,9 +65,6 @@ bun run dev
 ```bash
 # unit tests
 $ npm run test
-
-# test coverage
-$ npm run test:cov
 ```
 
 ### Author
