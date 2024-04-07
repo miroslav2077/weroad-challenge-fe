@@ -63,7 +63,7 @@ bun run dev
 ## Running tests 🔍
 
 ```bash
-# unit tests
+# e2e tests
 $ npm run test
 ```
 
