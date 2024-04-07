@@ -59,8 +59,8 @@ test('when no seats are available, reservation form should be blocked and "SOLD 
     await expect(page.getByTestId('traveler-amount')).toContainText(currentAvailability+'');
     await page.getByTestId('book-now').click();
   }
-  
-  await page.goto('/trips/united-arab-emirates');
+  await page.waitForTimeout(2500);
+  await goto('/trips/united-arab-emirates', { waitUntil: 'hydration' });
   await expect(page.getByTestId('sold-out')).toBeVisible();
   await expect(page.getByTestId('book-now')).toHaveCount(0);
 });
