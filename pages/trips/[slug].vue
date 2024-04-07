@@ -65,8 +65,8 @@
       </div>
       <span class="font-bold text-red-500 ml-auto flex flex-col">
         <span class="text-xs text-gray-900">AVAILABILITY </span>
-        <span v-if="availableSeats > 0">{{ availableSeats }} <span class="text-gray-900 font-normal">seat<span v-if="availableSeats != 1">s</span></span></span>
-        <span v-else class="uppercase">sold out</span>
+        <span data-testid="availability" v-if="availableSeats > 0">{{ availableSeats }} <span class="text-gray-900 font-normal">seat<span v-if="availableSeats != 1">s</span></span></span>
+        <span data-testid="sold-out" v-else class="uppercase">sold out</span>
       </span>
       <span class="font-bold text-red-500 flex flex-col"><span class="text-xs text-gray-900">PRICE </span>{{
       formatPrice(productBySlug.price) }}</span>
@@ -82,10 +82,10 @@
           <h3 class="text-sm font-bold mb-2 uppercase">How many travelers?</h3>
           <div class="flex">
             <button type="button" @click="() => travelerAmount--" :disabled="travelerAmount < 2"
-              class="rounded-full disabled:opacity-30 shadow-2xl bg-white border-gray-300 font-bold text-xl leading-none pb-1 border h-12 w-12 shrink-0 block text-center">-</button>
-            <span class="text-3xl mx-5 mt-1 font-bold text-red-500 font-mono">{{ travelerAmount }}</span>
+              class="rounded-full disabled:opacity-30 shadow-2xl bg-white border-gray-300 font-bold text-xl leading-none pb-1 border h-12 w-12 shrink-0 block text-center" data-testid="remove-traveler">-</button>
+            <span class="text-3xl mx-5 mt-1 font-bold text-red-500 font-mono" data-testid="traveler-amount">{{ travelerAmount }}</span>
             <button type="button" @click="() => travelerAmount++" :disabled="travelerAmount == availableSeats"
-              class="rounded-full disabled:opacity-30 shadow-2xl bg-white border-gray-300 font-bold text-xl leading-none pb-1 border h-12 w-12 shrink-0 block text-center">+</button>
+              class="rounded-full disabled:opacity-30 shadow-2xl bg-white border-gray-300 font-bold text-xl leading-none pb-1 border h-12 w-12 shrink-0 block text-center" data-testid="add-traveler">+</button>
           </div>
           <input type="hidden" name="travelerAmount" :value="travelerAmount">
         </div>
@@ -95,7 +95,7 @@
       </div>
 
       <div>
-        <button type="submit" class="bg-red-500 font-bold uppercase rounded text-white p-2 w-full">book now</button>
+        <button type="submit" class="bg-red-500 font-bold uppercase rounded text-white p-2 w-full" data-testid="book-now">book now</button>
       </div>
       </form>
     </div>

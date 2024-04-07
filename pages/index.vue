@@ -4,7 +4,7 @@
     <h1 class="text-3xl font-bold mb-4"><span class="text-red-500">We</span>Road</h1>
   </section>
   <section id="home_trips_list" class="flex flex-col bg-white space-y-4 items-center overflow-hidden">
-    <a :href="'/trips/'+product.slug" class="relative flex flex-col grow-0 justify-between overflow-hidden min-w-72 w-full h-72 rounded-xl shadow-md cursor-pointer group shrink-0" v-for="product in products">
+    <a :href="'/trips/'+product.slug" class="relative flex flex-col grow-0 justify-between overflow-hidden min-w-72 w-full h-72 rounded-xl shadow-md cursor-pointer group shrink-0" v-for="(product, index) in products" :data-testid="`trip-${index}`">
       <div class="absolute bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform z-0" :style="{ backgroundImage: `url(${product.imageUrl})` }">
       </div>
       <div class="z-10 relative flex justify-between py-2 px-4 bg-gradient-to-b from-slate-950/20 to-transparent">

@@ -27,7 +27,7 @@
       <span class="font-bold text-sm flex justify-between items-end">TOTAL <span class="text-red-500 text-2xl">{{ formatPrice(cart.totalAmount) }}</span></span>
     </div>
     <div class="mt-2">
-        <button type="submit" class="bg-red-500 font-bold uppercase rounded text-white p-2 w-full">pay</button>
+        <button type="submit" class="bg-red-500 font-bold uppercase rounded text-white p-2 w-full" data-testid="pay">pay</button>
       </div>
   </form>
 </section>

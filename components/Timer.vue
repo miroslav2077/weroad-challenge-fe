@@ -1,5 +1,5 @@
 <template>
-  <span class="font-bold text-red-500 text-2xl font-mono">{{ pad(timer.minutes) }}<span class="animate-blink">:</span>{{ pad(timer.seconds) }}</span>
+  <span class="font-bold text-red-500 text-2xl font-mono" data-testid="timer">{{ pad(timer.minutes) }}<span class="animate-blink">:</span>{{ pad(timer.seconds) }}</span>
 </template>
 
 <script lang="ts" setup>
