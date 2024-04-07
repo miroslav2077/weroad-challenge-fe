@@ -1,6 +1,28 @@
-# Nuxt 3 Minimal Starter
+# WeRoad TypeScript challenge (frontend) 🛫
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<p align="center">
+  <img src="https://theme.zdassets.com/theme_assets/9115960/ef5800cc529889d180b05b57e40dd50e5c7adb73.png" width="200" alt="WeRoad Logo" />
+</p>
+
+### Use case
+Implement a checkout process for WeRoad users to buy a Travel where:
+- the user can select a travel to book;
+- the user inputs an email and the number of seats to reserve;
+- the user pays the total amount to confirm the booking (FAKE payment step);
+
+### Requirements
+- A Travel has a max capacity of 5 seats;
+- After confirming the number of seats to reserve the availability should be granted for 15 minutes before the cart expires;
+
+### Challenge based on the following stack:
+- [MySql](https://github.com/mysql/mysql-server)
+- [TypeScript](https://github.com/microsoft/TypeScript)
+- [Nest](https://github.com/nestjs/nest)
+- [GraphQL](https://github.com/graphql)
+- [Nuxt 3](https://github.com/nuxt/nuxt)
+- [Tailwind](https://tailwindcss.com/)
+
+Have a great trip! 👩‍✈️
 
 ## Setup
 
@@ -20,7 +42,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+## Running the app 🖥️
 
 Start the development server on `http://localhost:3000`:
 
@@ -38,38 +60,16 @@ yarn dev
 bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Running tests 🔍
 
 ```bash
-# npm
-npm run build
+# unit tests
+$ npm run test
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# test coverage
+$ npm run test:cov
 ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Author
+Mirko Grasso
+grasso.mirko@gmail.com
